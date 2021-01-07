@@ -10,3 +10,4 @@ a = [0for i in range (M)]
 for i in b:
     for j in a:
         if(i == j):
+            dad
