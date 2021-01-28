@@ -8,20 +8,22 @@ res = True
 for i in range(int(sys.stdin.readline().rstrip())):
     point = int(sys.stdin.readline().rstrip())
     if point > num:
-        for i in range(point-num):
+        for i in range(point-pushnum):
             pushnum +=1
             li.append(pushnum)
             ll.append('+')
-            print('+')
+        num = li[len(li)-1]
+        if num != point:
+            res = False
+            break
         li.pop()
+        ll.append('-')
     else:
-        for i in range(num-point):
+        for i in range(num-point+1):
             li.pop()
             ll.append('-')
-            print('-')
     num = li[len(li)-1]
-    if num != point:
-        res = False
+
 if res:
     for i in ll:
         print(i)
