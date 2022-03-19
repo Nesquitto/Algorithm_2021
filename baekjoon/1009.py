@@ -1,8 +1,31 @@
-import sys 
-input = sys.stdin.readline 
-t = int(input()) 
-for _ in range(t): 	
-  a,b = map(int,input().split()) 
-	aa=a%10 	
-  if aa == 0:
-		print(10) 	elif aa in [1,5,6]: 		print(aa) 	elif aa in [4,9]: #패턴 2 		bb=b%2 		if bb == 0: 			print(aa*aa%10) 		else: 			print(aa) 	else: #패턴 4 		bb=b%4 		if bb ==0: 			print(aa**4%10) 		else: 			print(aa**bb%10) 
+import sys
+
+T = int(sys.stdin.readline().rstrip())
+for i in range(T):
+  a, b = map(int, sys.stdin.readline().split())
+  if a%10 == 0:
+    print(10)
+  elif a%10 == 1:
+    print(1)
+  elif a%10 == 2:
+    li = [6, 2, 4, 8]
+    print(li[b%4])
+  elif a%10 == 3:
+    li = [1, 3, 9, 7]
+    print(li[b%4])
+  elif a%10 == 4:
+    li = [6, 4]
+    print(li[b%2])
+  elif a%10 == 5:
+    print(5)
+  elif a%10 == 6:
+    print(6)
+  elif a%10 == 7:
+    li = [1, 7, 9, 3]
+    print (li[b%4])
+  elif a%10 == 8:
+    li = [6, 8, 4, 2]
+    print (li[b%4])
+  elif a%10 == 9:
+    li = [1, 9]
+    print (li[b%2])
